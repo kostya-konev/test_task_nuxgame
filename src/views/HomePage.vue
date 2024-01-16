@@ -54,5 +54,40 @@ export default {
       margin-top: 5px;
     }
   }
+
+  @media (max-width: 768px) {
+    .description-container {
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .login {
+        font-size: 16px;
+        padding: 15px 40px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .description-container {
+      h1 {
+        font-size: 40px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 30px;
+      }
+
+      .login {
+        font-size: 14px;
+        padding: 10px 30px;
+      }
+    }
+  }
 }
 </style>

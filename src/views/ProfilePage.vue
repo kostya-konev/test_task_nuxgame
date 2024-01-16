@@ -46,6 +46,24 @@ export default {
     border-right: 5px solid black;
     padding: 60px;
   }
+}
 
+@media (max-width: 768px) {
+  .user {
+    flex-direction: column;
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__details {
+      border: none;
+      padding: 40px;
+    }
+
+    &__actions {
+      width: 100vw;
+    }
+  }
 }
 </style>

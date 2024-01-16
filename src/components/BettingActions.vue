@@ -183,127 +183,175 @@ export default {
 <style scoped lang="scss">
 .page {
   padding: 60px;
-}
 
-.actions {
-  display: flex;
-  flex-direction: row;
-
-  &__main {
-    padding: 25px;
-    background-color: #097e7b;
-    border-right: 3px solid black;
-  }
-
-  &__second {
+  .actions {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 25px;
-    background-color: #097e7b;
+    flex-direction: row;
 
-    select {
-      padding: 3px;
-      border: 1px solid #ccc;
+    &__main {
+      padding: 25px;
+      background-color: #097e7b;
+      border-right: 3px solid black;
+    }
+
+    &__second {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 25px;
+      background-color: #097e7b;
+
+      select {
+        padding: 3px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+      }
+
+      input {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    }
+
+    &__new-todo {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      h3 {
+        margin-bottom: 8px;
+      }
+    }
+
+    &__todos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__todos-list {
+      margin-top: 10px;
+
+      li {
+        overflow-wrap: break-word;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        background-color: #097e7b;
+        min-height: 35px;
+        width: 950px;
+        line-height: 35px;
+        padding: 10px;
+        margin-bottom: 10px;
+        transition: transform 0.4s ease;
+        border-radius: 8px;
+      }
+
+      li:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    &__todos-pagination {
+      margin-top: 10px;
+    }
+
+    &__current-page {
+      display: inline-block;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+    &__addNewTodo {
+      background-color: #15172b;
+      border-radius: 12px;
+      border: 0;
+      box-sizing: border-box;
+      color: #eee;
+      cursor: pointer;
+      font-size: 18px;
+      height: 35px;
+      outline: 0;
+      text-align: center;
+      width: 60%;
+      margin: 10px auto 0;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    &__addToFavorite {
+      background-color: #15172b;
+      color: #fff;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
-      outline: none;
-    }
+      transition: background-color 0.3s;
+      margin-left: auto;
+      max-height: 38px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: transform 0.3s ease;
 
-    input {
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-  }
-
-  &__new-todo {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    h3 {
-      margin-bottom: 8px;
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
+}
 
-  &__todos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+@media (max-width: 768px) {
+  .page {
+    padding: 40px;
 
-  &__todos-list {
-    margin-top: 10px;
-
-    li {
-      overflow-wrap: break-word;
+    .actions {
       display: flex;
-      justify-content: space-between;
-      color: white;
-      background-color: #097e7b;
-      min-height: 35px;
-      width: 950px;
-      line-height: 35px;
-      padding: 10px;
-      margin-bottom: 10px;
-      transition: transform 0.4s ease;
-      border-radius: 8px;
-    }
+      flex-direction: column;
 
-    li:hover {
-      transform: scale(1.02);
-    }
-  }
+      &__main {
+        padding: 25px;
+        background-color: #097e7b;
+        border: none;
+        margin-bottom: 10px;
+      }
 
-  &__todos-pagination {
-    margin-top: 10px;
-  }
+      &__second {
+        input {
+          margin-top: 5px;
+        }
+      }
 
-  &__current-page {
-    display: inline-block;
-    padding-left: 4px;
-    padding-right: 4px;
-  }
+      &__todos {
+        display: flex;
+        flex-direction: column;
+      }
 
-  &__addNewTodo {
-    background-color: #15172b;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    cursor: pointer;
-    font-size: 18px;
-    height: 35px;
-    outline: 0;
-    text-align: center;
-    width: 60%;
-    margin: 10px auto 0;
-    transition: transform 0.3s ease;
+      &__todos-list {
+        display: flex;
+        flex-direction: column;
 
-    &:hover {
-      transform: scale(1.02);
-    }
-  }
-
-  &__addToFavorite {
-    background-color: #15172b;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: auto;
-    max-height: 38px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.02);
+        li {
+          overflow-wrap: break-word;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          color: white;
+          max-width: 300px;
+          background-color: #097e7b;
+          padding: 10px;
+          margin-bottom: 10px;
+          transition: transform 0.4s ease;
+          border-radius: 8px;
+        }
+      }
     }
   }
 }
